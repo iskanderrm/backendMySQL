@@ -8,7 +8,7 @@ const storage = multer.diskStorage({
   },
   filename: (req, file, cb) => {
     const extension = path.extname(file.originalname);
-    const randomName = crypto.randomBytes(20).toString('hex'); // Genera un nombre aleatorio
+    const randomName = crypto.randomBytes(20).toString('hex');
     const uniqueFilename = `${randomName}${extension}`;
     cb(null, uniqueFilename);
   },
